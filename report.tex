@@ -53,7 +53,7 @@ or Math in Paper Title or Abstract.
         This response to $\delta[n]$ is known as the impulse response, $h[n]$.
         In this digital model, the room's frequency response is effectively a series of filters and so it will be both linear and shift-invariant.
         By convolving $h[n]$ with any input $x[n]$, the output $y[n]$ of the signal flow can be found. 
-        The convolution in the digital domain is formulated as a sum, as opposed to the analog domain where it is an integral.
+        The convolution in the digital domain is formulated as a sum, as opposed to the continuous time domain where it is an integral.
         The digital convolution sum is shown in Eq.\ref{conv}
         \begin{equation}\label{conv}
             y[n] = \sum_{k=-\infty}^\infty x[k] h[n-k]
@@ -76,6 +76,7 @@ or Math in Paper Title or Abstract.
         Instead, pink noise's power spectral density is inversely proportional to the frequency of the signal.
         Using pink noise as a test signal is preferred over white noise, as the roll-off in average amplitude over frequency generally follows the equal loudness curve - where the human auditory experience is more sensitive to high frequencies \cite{GENELEC}.
         With white noise the high frequencies naturally dominate the human auditory experience; the frequency roll-off of pink noise compensates for this.
+    \subsection{Digital Filters}
 \section{Methodology}
 
 \section{Results}
