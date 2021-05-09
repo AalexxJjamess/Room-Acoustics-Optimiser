@@ -4,7 +4,7 @@
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
-\usepackage{graphicx}
+\usepackage{graphicx, float}
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{url}
@@ -70,13 +70,31 @@ or Math in Paper Title or Abstract.
         \end{equation}
         A burst is a short length of pink noise.
         A digital noise signal is non-deterministic and statistically random in it's current sample value, as so it cannot be described to have a frequency or period, as it is almost impossible for it to repeat over a given time period \cite{OPPENHEIM376}.
-        This randomness can instead be quantified with a standard deviation $\sigma$, and probability of frequency and magnitude components arising throughout the signal.
+        This randomness can instead be quantified with a standard deviation $\sigma$, and probability of frequency \& magnitude components arising throughout the signal.
         White noise is the most basic noise signal, with every frequency sharing an equal probability of arising at all times throughout the signal; it has constant power spectral density \cite{CARTER}
         Pink noise, does not have a constant equal probability for any frequency to arise in the signal.
+        \begin{figure}[H]
+            \centering
+            \includegraphics[scale = 0.35]{resources/PinkNoise.png}
+            \caption{Frequency Response of Pink Noise \cite{AFIELDS}}
+        \end{figure}
         Instead, pink noise's power spectral density is inversely proportional to the frequency of the signal.
         Using pink noise as a test signal is preferred over white noise, as the roll-off in average amplitude over frequency generally follows the equal loudness curve - where the human auditory experience is more sensitive to high frequencies \cite{GENELEC}.
         With white noise the high frequencies naturally dominate the human auditory experience; the frequency roll-off of pink noise compensates for this.
+        
     \subsection{Digital Filters}
+        In the continuous time audio domain, filters are applied using either passive or active circuits.
+        Loudspeakers often use these analog electronic filters to cross-over the optimal frequency pass-bands of a pair of drivers to create an optimum combined system response.
+        In the digital, discrete-time domain, filters are realized as linear, shift-invariant systems.
+        Digital filters fall into two categories, finite impulse response (FIR) and infinite impulse response (IIR).
+        As their names imply, the main difference between the two digital filter types is their impulse responses.
+        An IIR filter's  signal flow is recursive and thus - when fed an impulse of $\delta[n]$, the impulse response $h[n]$ is infinitely long.
+        An FIR filter has a feed-forward signal flow and so is not recursive and has a finitely long impulse response.
+        Equation \ref{FIR} shows the general form of an FIR filter, where the output is equal the the input $x[n]$ convolved with the impulse response of the filter $h[n]$ \cite{JORDAN}:
+        \begin{equation}\label{FIR}
+            y[n] = \sum_{k=0}^N h_k x_{n-k}
+        \end{equation}
+        Figure \ref{BLOCK} shows a block diagram
 \section{Methodology}
 
 \section{Results}
